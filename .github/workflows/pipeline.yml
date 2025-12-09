@@ -29,6 +29,12 @@ jobs:
       - name: compile main.cpp
         run: g++ main.cpp -o main
 
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: main
+          path: main
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
