@@ -36,7 +36,7 @@ jobs:
       - name: download artifact
         uses: actions/download-artifact@v4
         with:
-          name: main-binary
+          name: main
           path: .
       - name: deploy
         run: ls -l main
