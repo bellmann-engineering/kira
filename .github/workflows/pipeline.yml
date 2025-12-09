@@ -29,3 +29,16 @@ jobs:
       - name: compile main.cpp
         run: g++ main.cpp -o main
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: main-binary
+          path: .
+      - name: deploy
+        run: ls -l main
+              
+    
